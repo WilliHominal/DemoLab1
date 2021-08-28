@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">DemoLab1</string>
+    <string name="titulo_label">Titulo</string>
+    <string name="titulo_hint">Titulo...</string>
+    <string name="descripcion_label">Descripción (opcional)</string>
+    <string name="descripcion_hint">Descripción del producto...</string>
+    <string name="correo_label">Correo de contacto</string>
+    <string name="correo_hint">Correo electrónico...</string>
+    <string name="precio_label">Precio</string>
+    <string name="precio_hint">00</string>
+    <string name="categoria_label">Categoría</string>
+    <string name="descuentoEnvio_texto">Ofrecer descuento de envío</string>
+    <string name="minDescuento_seekbar_texto">0</string>
+    <string name="maxDescuento_seekbar_texto">100</string>
+    <string name="retiroEnPersona_texto">Retiro en persona</string>
+    <string name="direccionRetiro_label">Dirección de retiro</string>
+    <string name="direccionRetiro_hint">Dirección de retiro...</string>
+    <string name="terminosCondiciones_texto">Aceptar términos y condiciones</string>
+    <string name="publicarBtn_texto">Publicar</string>
 </resources>
