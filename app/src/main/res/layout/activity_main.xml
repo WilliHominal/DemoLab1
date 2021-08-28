@@ -73,12 +73,13 @@
         android:id="@+id/categoriaLbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/categoria_label" />
+        android:text="@string/categoria_label"/>
 
     <Spinner
         android:id="@+id/categoriaSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog" />
 
     <Switch
         android:id="@+id/descuentoEnvioSwitch"
@@ -150,6 +151,7 @@
         android:id="@+id/publicarBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/publicarBtn_texto" />
+        android:text="@string/publicarBtn_texto"
+        android:enabled="false"/>
 
 </LinearLayout>
