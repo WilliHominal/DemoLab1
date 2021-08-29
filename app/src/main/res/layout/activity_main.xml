@@ -90,9 +90,10 @@
     <Spinner
         android:id="@+id/categoriaSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
-        android:prompt="@string/categoria_header"/>
+        android:layout_height="32dp"
+        android:dropDownWidth="match_parent"
+        android:popupBackground="@color/light_green_claro"
+        android:background = "@drawable/spinner_fondo"/>
 
     <Switch
         android:id="@+id/descuentoEnvioSwitch"

@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         toastMsg = Toast.makeText(this, "", Toast.LENGTH_LONG);
 
         categoriaSpinner = (Spinner) findViewById(R.id.categoriaSpinner);
-        adapterCategoriaSpinner = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_dropdown_item);
+        adapterCategoriaSpinner = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_item);
 
         categoriaSpinner.setAdapter(adapterCategoriaSpinner);
 
@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
 
             switch (validacion){
                 case -1: mensaje = "Los campos con asterisco (*) son obligatorios"; break;
-
                 case -10: mensaje = "Título no puede contener caracteres especiales"; break;
                 case -20: mensaje = "Descripción no puede contener caracteres especiales"; break;
                 case -30: mensaje = "Correo tiene un formato inválido"; break;
@@ -151,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
             return -40;
         if (Integer.parseInt(precioInput.getText().toString()) <= 0)
             return -41;
+        if (categoriaSpinner.getSelectedItemPosition() == 0)
+            return -1;
         if (descuentoSwitch.isChecked() && descuentoEnvioSeekbar.getProgress() == 0)
             return -50;
         if (retiroEnPersonaCheckBox.isChecked() && !direccionRetiroInput.getText().toString().matches(regexCamposTexto))

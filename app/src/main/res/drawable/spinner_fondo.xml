@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item><layer-list>
+        <item>
+            <shape>
+                <solid
+                    android:color="@color/white">
+                </solid>
+
+                <padding
+                    android:right="10dp">
+                </padding>
+
+                <stroke
+                    android:width="2dp"
+                    android:color="@color/gris_claro"/>
+            </shape>
+        </item>
+        <item >
+            <bitmap android:gravity="right"
+                android:src="@drawable/flecha_spinner" />
+        </item>
+    </layer-list></item>
+</selector>
