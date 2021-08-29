@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:text="@string/titulo_label"
         android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"/>
+        android:paddingStart="@dimen/espaciado_labels"
+        android:paddingEnd="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/tituloInput"
@@ -30,7 +31,8 @@
         android:layout_height="wrap_content"
         android:text="@string/descripcion_label"
         android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"/>
+        android:paddingStart="@dimen/espaciado_labels"
+        android:paddingEnd="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/descripcionInput"
@@ -50,7 +52,8 @@
         android:layout_height="wrap_content"
         android:text="@string/correo_label"
         android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"/>
+        android:paddingStart="@dimen/espaciado_labels"
+        android:paddingEnd="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/correoInput"
@@ -68,7 +71,8 @@
         android:layout_height="wrap_content"
         android:text="@string/precio_label"
         android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"/>
+        android:paddingStart="@dimen/espaciado_labels"
+        android:paddingEnd="@dimen/espaciado_labels"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,7 +85,8 @@
             android:layout_height="wrap_content"
             android:text="@string/precio_simbolo_label"
             android:textSize="@dimen/tamano_input"
-            android:paddingStart="@dimen/espaciado_labels"/>
+            android:paddingStart="@dimen/espaciado_labels"
+            android:paddingEnd="@dimen/espaciado_labels"/>
 
         <EditText
             android:id="@+id/precioInput"
@@ -100,7 +105,8 @@
         android:layout_height="wrap_content"
         android:text="@string/categoria_label"
         android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"/>
+        android:paddingStart="@dimen/espaciado_labels"
+        android:paddingEnd="@dimen/espaciado_labels"/>
 
     <Spinner
         android:id="@+id/categoriaSpinner"
@@ -117,7 +123,8 @@
         android:layout_height="wrap_content"
         android:text="@string/descuentoEnvio_texto"
         android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"/>
+        android:paddingStart="@dimen/espaciado_labels"
+        android:paddingEnd="@dimen/espaciado_labels"/>
 
     <LinearLayout
         android:id="@+id/descuentoEnvioLayout"
@@ -175,7 +182,8 @@
         android:text="@string/direccionRetiro_label"
         android:visibility="gone"
         android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"/>
+        android:paddingStart="@dimen/espaciado_labels"
+        android:paddingEnd="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/direccionRetiroInput"
