@@ -1,5 +1,6 @@
 package com.warh.demolab1;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -26,15 +27,20 @@ public class MainActivity extends AppCompatActivity {
     Button publicarBtn;
     SeekBar descuentoEnvioSeekbar;
 
-    LinearLayout descuentoLayout;
-    TextView direccionRetiroLabel;
-    TextView descuentoActualLabel;
-
     EditText tituloInput;
     EditText descripcionInput;
     EditText emailInput;
     EditText precioInput;
     EditText direccionRetiroInput;
+
+    TextView tituloLabel;
+    TextView descripcionLabel;
+    TextView emailLabel;
+    TextView precioLabel;
+    TextView categoriaLabel;
+    TextView direccionRetiroLabel;
+    TextView descuentoActualLabel;
+    LinearLayout descuentoLayout;
 
     Toast toastMsg;
 
@@ -47,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
         descripcionInput = (EditText) findViewById(R.id.descripcionInput);
         emailInput = (EditText) findViewById(R.id.correoInput);
         precioInput = (EditText) findViewById(R.id.precioInput);
+
+        tituloLabel = (TextView) findViewById(R.id.tituloLbl);
+        descripcionLabel = (TextView) findViewById(R.id.descripcionLbl);
+        emailLabel = (TextView) findViewById(R.id.correoLbl);
+        precioLabel = (TextView) findViewById(R.id.precioLbl);
+        categoriaLabel = (TextView) findViewById(R.id.categoriaLbl);
 
         descuentoLayout = (LinearLayout) findViewById(R.id.descuentoEnvioLayout);
         direccionRetiroLabel = (TextView) findViewById(R.id.direccionRetiroLbl);
@@ -132,30 +144,58 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int validarCampos (){
-        String regexCamposTexto = "^[\\wáéíóú,.\\n\\s]+$";
+        String regexCamposTexto = "^[a-zA-ZáéíóúñÑ\\d,.\\n\\s]+$";
         String regexCamposNumero = "(^[\\d]+$)|(^[\\d]*\\.[\\d]+$)";
         String regexCorreo = "[\\w]+[@][a-zA-Z]{3,}.*";
 
-        if (tituloInput.getText().toString().isEmpty())
-            return -1;
-        if (!tituloInput.getText().toString().matches(regexCamposTexto))
-            return -10;
-        if (!descripcionInput.getText().toString().isEmpty() && !descripcionInput.getText().toString().matches(regexCamposTexto))
-            return -20;
-        if (!emailInput.getText().toString().isEmpty() && !emailInput.getText().toString().matches(regexCorreo))
-            return -30;
-        if (precioInput.getText().toString().isEmpty())
-            return -1;
-        if (!precioInput.getText().toString().matches(regexCamposNumero))
-            return -40;
-        if (Integer.parseInt(precioInput.getText().toString()) <= 0)
-            return -41;
-        if (categoriaSpinner.getSelectedItemPosition() == 0)
-            return -1;
-        if (descuentoSwitch.isChecked() && descuentoEnvioSeekbar.getProgress() == 0)
-            return -50;
-        if (retiroEnPersonaCheckBox.isChecked() && !direccionRetiroInput.getText().toString().matches(regexCamposTexto))
-            return -1;
-        return 0;
+        int numeroError = 0;
+
+        tituloLabel.setTextColor(ContextCompat.getColor(this, R.color.black));
+        descripcionLabel.setTextColor(ContextCompat.getColor(this, R.color.black));
+        precioLabel.setTextColor(ContextCompat.getColor(this, R.color.black));
+        categoriaLabel.setTextColor(ContextCompat.getColor(this, R.color.black));
+        descuentoActualLabel.setTextColor(ContextCompat.getColor(this, R.color.black));
+        direccionRetiroLabel.setTextColor(ContextCompat.getColor(this, R.color.black));
+
+        if (tituloInput.getText().toString().isEmpty()) {
+            numeroError = -1;
+            tituloLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (!tituloInput.getText().toString().matches(regexCamposTexto)) {
+            if (numeroError == 0) numeroError = -10;
+            tituloLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (!descripcionInput.getText().toString().isEmpty() && !descripcionInput.getText().toString().matches(regexCamposTexto)) {
+            if (numeroError == 0) numeroError = -20;
+            descripcionLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (!emailInput.getText().toString().isEmpty() && !emailInput.getText().toString().matches(regexCorreo)) {
+            if (numeroError == 0) numeroError = -30;
+            emailLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (precioInput.getText().toString().isEmpty()) {
+            if (numeroError == 0) numeroError = -1;
+            precioLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (!precioInput.getText().toString().matches(regexCamposNumero)) {
+            if (numeroError == 0) numeroError = -40;
+            precioLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        } else if (Integer.parseInt(precioInput.getText().toString()) <= 0) {
+            if (numeroError == 0) numeroError = -41;
+            precioLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (categoriaSpinner.getSelectedItemPosition() == 0) {
+            if (numeroError == 0) numeroError = -1;
+            categoriaLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (descuentoSwitch.isChecked() && descuentoEnvioSeekbar.getProgress() == 0) {
+            if (numeroError == 0) numeroError = -50;
+            descuentoActualLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        if (retiroEnPersonaCheckBox.isChecked() && !direccionRetiroInput.getText().toString().matches(regexCamposTexto)) {
+            if (numeroError == 0) numeroError = -1;
+            direccionRetiroLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
+        }
+        return numeroError;
     }
 }
