@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DemoLab1</string>
-    <string name="titulo_label">Titulo (*)</string>
-    <string name="titulo_hint">Titulo&#8230;</string>
+    <string name="titulo_label">Título (*)</string>
+    <string name="titulo_hint">Título&#8230;</string>
     <string name="descripcion_label">Descripción</string>
     <string name="descripcion_hint">Descripción del producto&#8230;</string>
     <string name="correo_label">Correo de contacto</string>

@@ -11,22 +11,26 @@
         android:id="@+id/tituloLbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/titulo_label" />
+        android:text="@string/titulo_label"
+        android:textSize="@dimen/tamano_label"
+        android:paddingStart="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/tituloInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="text"
         android:hint="@string/titulo_hint"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:textSize="@dimen/tamano_input"/>
 
     <TextView
         android:id="@+id/descripcionLbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/descripcion_label" />
+        android:text="@string/descripcion_label"
+        android:textSize="@dimen/tamano_label"
+        android:paddingStart="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/descripcionInput"
@@ -37,13 +41,16 @@
         android:inputType="textMultiLine"
         android:hint="@string/descripcion_hint"
         android:lines="3"
-        android:importantForAutofill="no"/>
+        android:importantForAutofill="no"
+        android:textSize="@dimen/tamano_input"/>
 
     <TextView
         android:id="@+id/correoLbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/correo_label" />
+        android:text="@string/correo_label"
+        android:textSize="@dimen/tamano_label"
+        android:paddingStart="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/correoInput"
@@ -52,13 +59,16 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="@string/correo_hint"
-        android:autofillHints="emailAddress"/>
+        android:autofillHints="emailAddress"
+        android:textSize="@dimen/tamano_input"/>
 
     <TextView
         android:id="@+id/precioLbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/precio_label" />
+        android:text="@string/precio_label"
+        android:textSize="@dimen/tamano_label"
+        android:paddingStart="@dimen/espaciado_labels"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,7 +79,9 @@
             android:id="@+id/simboloPrecioLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/precio_simbolo_label" />
+            android:text="@string/precio_simbolo_label"
+            android:textSize="@dimen/tamano_input"
+            android:paddingStart="@dimen/espaciado_labels"/>
 
         <EditText
             android:id="@+id/precioInput"
@@ -78,28 +90,34 @@
             android:ems="10"
             android:hint="@string/precio_hint"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:textSize="@dimen/tamano_input"/>
     </LinearLayout>
 
     <TextView
         android:id="@+id/categoriaLbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/categoria_label"/>
+        android:text="@string/categoria_label"
+        android:textSize="@dimen/tamano_label"
+        android:paddingStart="@dimen/espaciado_labels"/>
 
     <Spinner
         android:id="@+id/categoriaSpinner"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="28dp"
         android:dropDownWidth="match_parent"
         android:popupBackground="@color/light_green_claro"
-        android:background = "@drawable/spinner_fondo"/>
+        android:background = "@drawable/spinner_fondo"
+        android:textSize="@dimen/tamano_input"/>
 
     <Switch
         android:id="@+id/descuentoEnvioSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/descuentoEnvio_texto" />
+        android:text="@string/descuentoEnvio_texto"
+        android:textSize="@dimen/tamano_label"
+        android:paddingStart="@dimen/espaciado_labels"/>
 
     <LinearLayout
         android:id="@+id/descuentoEnvioLayout"
@@ -112,23 +130,26 @@
             android:id="@+id/minDescuentoLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="@dimen/espaciado_seekbar"
             android:layout_weight="0"
-            android:text="@string/minDescuento_seekbar_texto" />
+            android:text="@string/minDescuento_seekbar_texto"
+            android:textSize="@dimen/tamano_input"/>
 
         <SeekBar
             android:id="@+id/descuentoEnvioSeekbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/maxDescuentoLbl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="@dimen/espaciado_seekbar"
             android:layout_weight="0"
-            android:text="@string/maxDescuento_seekbar_texto" />
+            android:text="@string/maxDescuento_seekbar_texto"
+            android:textSize="@dimen/tamano_input"/>
 
     </LinearLayout>
 
@@ -137,20 +158,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/descuentoActual_label"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:gravity="center"/>
 
     <CheckBox
         android:id="@+id/retiroEnPersonaCheckbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/retiroEnPersona_texto" />
+        android:text="@string/retiroEnPersona_texto"
+        android:textSize="@dimen/tamano_label"/>
 
     <TextView
         android:id="@+id/direccionRetiroLbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/direccionRetiro_label"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:textSize="@dimen/tamano_label"
+        android:paddingStart="@dimen/espaciado_labels"/>
 
     <EditText
         android:id="@+id/direccionRetiroInput"
@@ -160,13 +185,15 @@
         android:inputType="text"
         android:hint="@string/direccionRetiro_hint"
         android:importantForAutofill="no"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:textSize="@dimen/tamano_input"/>
 
     <CheckBox
         android:id="@+id/terminosCondicionesCheckbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/terminosCondiciones_texto"/>
+        android:text="@string/terminosCondiciones_texto"
+        android:textSize="@dimen/tamano_label"/>
 
     <Button
         android:id="@+id/publicarBtn"
@@ -175,6 +202,5 @@
         android:text="@string/publicarBtn_texto"
         android:enabled="false"
         android:background="@drawable/boton_publicar"
-        />
-        <!--android:theme="@style/BotonPublicar"-->
+        android:textSize="@dimen/tamano_label"/>
 </LinearLayout>

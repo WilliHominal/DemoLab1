@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="tamano_label">17sp</dimen>
+    <dimen name="tamano_input">15sp</dimen>
+    <dimen name="espaciado_seekbar">50dp</dimen>
+    <dimen name="espaciado_labels">2dp</dimen>
+</resources>

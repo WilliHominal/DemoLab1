@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         toastMsg = Toast.makeText(this, "", Toast.LENGTH_LONG);
 
         categoriaSpinner = (Spinner) findViewById(R.id.categoriaSpinner);
-        adapterCategoriaSpinner = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_item);
+        adapterCategoriaSpinner = ArrayAdapter.createFromResource(this, R.array.categorias, R.layout.spinner_item);
 
         categoriaSpinner.setAdapter(adapterCategoriaSpinner);
 
