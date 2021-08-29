@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         direccionRetiroLabel = (TextView) findViewById(R.id.direccionRetiroLbl);
         direccionRetiroInput = (EditText) findViewById(R.id.direccionRetiroInput);
         descuentoActualLabel = (TextView) findViewById(R.id.descuentoActualLbl);
+        descuentoActualLabel.setText(getString(R.string.descuentoActual_label, 0));
 
         categoriaSpinner = (Spinner) findViewById(R.id.categoriaSpinner);
         adapterCategoriaSpinner = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_dropdown_item);
@@ -77,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         descuentoEnvioSeekbar = (SeekBar) findViewById(R.id.descuentoEnvioSeekbar);
         descuentoEnvioSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                descuentoActualLabel.setText("Descuento: " + i + "%");
+            public void onProgressChanged(SeekBar seekBar, int valorActual, boolean b) {
+                descuentoActualLabel.setText(getString(R.string.descuentoActual_label, valorActual));
             }
 
             @Override
