@@ -111,7 +111,7 @@
     <Spinner
         android:id="@+id/categoriaSpinner"
         android:layout_width="match_parent"
-        android:layout_height="28dp"
+        android:layout_height="@dimen/altura_spinner"
         android:dropDownWidth="match_parent"
         android:popupBackground="@color/light_green_claro"
         android:background = "@drawable/spinner_fondo"

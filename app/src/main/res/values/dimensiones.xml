@@ -2,6 +2,9 @@
 <resources>
     <dimen name="tamano_label">17sp</dimen>
     <dimen name="tamano_input">15sp</dimen>
+    <dimen name="tamano_letra_spinner">14sp</dimen>
+    <dimen name="altura_spinner">28dp</dimen>
     <dimen name="espaciado_seekbar">50dp</dimen>
     <dimen name="espaciado_labels">2dp</dimen>
+    <dimen name="espaciado_spinner">5dp</dimen>
 </resources>
