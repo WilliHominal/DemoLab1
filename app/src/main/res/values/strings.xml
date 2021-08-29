@@ -6,6 +6,7 @@
     <string name="descripcion_hint">Descripción del producto...</string>
     <string name="correo_label">Correo de contacto</string>
     <string name="correo_hint">Correo electrónico...</string>
+    <string name="precio_simbolo_label">$</string>
     <string name="precio_label">Precio</string>
     <string name="precio_hint">00</string>
     <string name="categoria_label">Categoría</string>
@@ -15,6 +16,6 @@
     <string name="retiroEnPersona_texto">Retiro en persona</string>
     <string name="direccionRetiro_label">Dirección de retiro</string>
     <string name="direccionRetiro_hint">Dirección de retiro...</string>
-    <string name="terminosCondiciones_texto">Aceptar términos y condiciones</string>
+    <string name="terminosCondiciones_texto">Aceptar <a href="">términos y condiciones</a></string>
     <string name="publicarBtn_texto">Publicar</string>
 </resources>

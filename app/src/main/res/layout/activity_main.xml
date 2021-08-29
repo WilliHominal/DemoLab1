@@ -60,14 +60,26 @@
         android:layout_height="wrap_content"
         android:text="@string/precio_label" />
 
-    <EditText
-        android:id="@+id/precioInput"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:hint="@string/precio_hint"
-        android:importantForAutofill="no"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/simboloPrecioLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/precio_simbolo_label" />
+
+        <EditText
+            android:id="@+id/precioInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/precio_hint"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/categoriaLbl"
@@ -145,7 +157,7 @@
         android:id="@+id/terminosCondicionesCheckbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/terminosCondiciones_texto" />
+        android:text="@string/terminosCondiciones_texto"/>
 
     <Button
         android:id="@+id/publicarBtn"
