@@ -130,6 +130,13 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/descuentoActualLbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/descuentoActual_label"
+        android:visibility="gone"/>
+
     <CheckBox
         android:id="@+id/retiroEnPersonaCheckbox"
         android:layout_width="wrap_content"

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -22,10 +23,12 @@ public class MainActivity extends AppCompatActivity {
     CheckBox retiroEnPersonaCheckBox;
     CheckBox terminosCondicionesCheckBox;
     Button publicarBtn;
+    SeekBar descuentoEnvioSeekbar;
 
     LinearLayout descuentoLayout;
     TextView direccionRetiroLabel;
     EditText direccionRetiroInput;
+    TextView descuentoActualLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         descuentoLayout = (LinearLayout) findViewById(R.id.descuentoEnvioLayout);
         direccionRetiroLabel = (TextView) findViewById(R.id.direccionRetiroLbl);
         direccionRetiroInput = (EditText) findViewById(R.id.direccionRetiroInput);
+        descuentoActualLabel = (TextView) findViewById(R.id.descuentoActualLbl);
 
         categoriaSpinner = (Spinner) findViewById(R.id.categoriaSpinner);
         adapterCategoriaSpinner = ArrayAdapter.createFromResource(this, R.array.categorias, android.R.layout.simple_spinner_dropdown_item);
@@ -46,8 +50,10 @@ public class MainActivity extends AppCompatActivity {
         descuentoSwitch.setOnCheckedChangeListener((boton, activo) -> {
             if (activo){
                 descuentoLayout.setVisibility(View.VISIBLE);
+                descuentoActualLabel.setVisibility(View.VISIBLE);
             } else {
                 descuentoLayout.setVisibility(View.GONE);
+                descuentoActualLabel.setVisibility(View.GONE);
             }
         });
 
@@ -68,5 +74,22 @@ public class MainActivity extends AppCompatActivity {
         terminosCondicionesCheckBox.setMovementMethod(LinkMovementMethod.getInstance());
         terminosCondicionesCheckBox.setOnCheckedChangeListener((boton, activo) -> publicarBtn.setEnabled(activo));
 
+        descuentoEnvioSeekbar = (SeekBar) findViewById(R.id.descuentoEnvioSeekbar);
+        descuentoEnvioSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                descuentoActualLabel.setText("Descuento: " + i + "%");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }

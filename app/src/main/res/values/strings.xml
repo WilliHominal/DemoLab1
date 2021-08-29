@@ -11,6 +11,7 @@
     <string name="precio_hint">00</string>
     <string name="categoria_label">Categoría</string>
     <string name="descuentoEnvio_texto">Ofrecer descuento de envío</string>
+    <string name="descuentoActual_label">Descuento: 0%</string>
     <string name="minDescuento_seekbar_texto">0</string>
     <string name="maxDescuento_seekbar_texto">100</string>
     <string name="retiroEnPersona_texto">Retiro en persona</string>
