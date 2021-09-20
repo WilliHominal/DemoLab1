@@ -3,11 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/drawable/boton_publicar.xml" value="0.22135416666666666" />
-        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/drawable/flecha_spinner.xml" value="0.22135416666666666" />
-        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/drawable/spinner_fondo.xml" value="0.22135416666666666" />
-        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/layout/spinner_item.xml" value="0.2015625" />
+        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/layout/activity_categorias.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/layout/activity_listado_categorias.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/layout/activity_main.xml" value="0.325" />
+        <entry key="..\:/Android-Studio-Projects/DemoLab1/app/src/main/res/layout/fila_cat.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
