@@ -1,25 +1,24 @@
 package com.warh.demolab1;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    Spinner categoriaSpinner;
-    ArrayAdapter<CharSequence> adapterCategoriaSpinner;
 
     Switch descuentoSwitch;
     CheckBox retiroEnPersonaCheckBox;
@@ -44,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     Toast toastMsg;
 
+    Button seleccionarCategoriaBtn;
+    TextView categoriaSeleccionadaLabel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,10 +69,7 @@ public class MainActivity extends AppCompatActivity {
         descuentoActualLabel.setText(getString(R.string.descuentoActual_label, 0));
         toastMsg = Toast.makeText(this, "", Toast.LENGTH_LONG);
 
-        categoriaSpinner = (Spinner) findViewById(R.id.categoriaSpinner);
-        adapterCategoriaSpinner = ArrayAdapter.createFromResource(this, R.array.categorias, R.layout.spinner_item);
-
-        categoriaSpinner.setAdapter(adapterCategoriaSpinner);
+        categoriaSeleccionadaLabel = (TextView) findViewById(R.id.categoriaSeleccionadaLbl);
 
         descuentoSwitch = (Switch) findViewById(R.id.descuentoEnvioSwitch);
         descuentoSwitch.setOnCheckedChangeListener((boton, activo) -> {
@@ -141,6 +140,27 @@ public class MainActivity extends AppCompatActivity {
 
             Toast.makeText(getBaseContext(), mensaje, duracion).show();
         });
+
+        seleccionarCategoriaBtn = (Button)findViewById(R.id.seleccionarCategoriaBtn);
+
+        seleccionarCategoriaBtn.setOnClickListener(view -> {
+            Intent i1 = new Intent(MainActivity.this, ListadoCategorias.class);
+            startActivityForResult(i1, 1);
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==1){
+            if(resultCode== Activity.RESULT_OK){
+                String res = data.getStringExtra("CAT_SELECCIONADA");
+
+                categoriaSeleccionadaLabel.setText(res);
+                categoriaSeleccionadaLabel.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     private int validarCampos (){
@@ -183,10 +203,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (Integer.parseInt(precioInput.getText().toString()) <= 0) {
             if (numeroError == 0) numeroError = -41;
             precioLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
-        }
-        if (categoriaSpinner.getSelectedItemPosition() == 0) {
-            if (numeroError == 0) numeroError = -1;
-            categoriaLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
         }
         if (descuentoSwitch.isChecked() && descuentoEnvioSeekbar.getProgress() == 0) {
             if (numeroError == 0) numeroError = -50;

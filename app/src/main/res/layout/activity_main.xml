@@ -98,23 +98,34 @@
             android:textSize="@dimen/tamano_input"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/categoriaLbl"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/categoria_label"
-        android:textSize="@dimen/tamano_label"
-        android:paddingStart="@dimen/espaciado_labels"
-        android:paddingEnd="@dimen/espaciado_labels"/>
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/categoriaSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/altura_spinner"
-        android:dropDownWidth="match_parent"
-        android:popupBackground="@color/light_green_claro"
-        android:background = "@drawable/spinner_fondo"
-        android:textSize="@dimen/tamano_input"/>
+        <TextView
+            android:id="@+id/categoriaLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/categoria_label"
+            android:textSize="@dimen/tamano_label"
+            android:paddingStart="@dimen/espaciado_labels"
+            android:paddingEnd="@dimen/espaciado_labels"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/seleccionarCategoriaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seleccionarCategoria_texto"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/categoriaSeleccionadaLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
     <Switch
         android:id="@+id/descuentoEnvioSwitch"

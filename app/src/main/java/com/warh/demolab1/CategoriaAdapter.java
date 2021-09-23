@@ -6,7 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -17,12 +20,14 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView nombreInput;
+        CheckBox estaSeleccionada;
         View view;
 
         public ViewHolder(View fila){
             super(fila);
             view = fila;
             nombreInput = fila.findViewById(R.id.nombreFilaInput);
+            estaSeleccionada = fila.findViewById(R.id.filaCatCheckBox);
         }
 
         public View contenedor(){
@@ -32,6 +37,8 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
         public TextView getNombreInput(){
             return nombreInput;
         }
+
+        public boolean getEstaSeleccionada() { return estaSeleccionada.isChecked(); }
     }
 
     public CategoriaAdapter(List<String> dataSet){
@@ -46,12 +53,13 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+        viewHolder.nombreInput.setTag(position);
+        viewHolder.estaSeleccionada.setTag(position);
         String categoria = mDataSet.get(position);
 
         switch (position){
             case 0:
                 viewHolder.contenedor().findViewById(R.id.filaCatCardView).setBackgroundColor(Color.parseColor("#cfcf00"));
-                //viewHolder.contenedor().setBackgroundColor(Color.parseColor("#cfcf00"));
                 break;
             case 1:
                 viewHolder.contenedor().findViewById(R.id.filaCatCardView).setBackgroundColor(Color.parseColor("#9ecf00"));
