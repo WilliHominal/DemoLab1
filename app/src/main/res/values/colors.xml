@@ -13,4 +13,11 @@
     <color name="light_green_oscuro">#6B9B37</color>
     <color name="light_green_oscuro_apagado">#4A5E31</color>
     <color name="gris_claro">#C7C7C7</color>
+
+    <color name="color_indumentaria">#cfcf00</color>
+    <color name="color_electronica">#9ecf00</color>
+    <color name="color_entretenimiento">#6ecf00</color>
+    <color name="color_jardin">#37cf00</color>
+    <color name="color_vehiculos">#00cf8d</color>
+    <color name="color_juguetes">#00a9cf</color>
 </resources>

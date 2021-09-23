@@ -10,11 +10,11 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SELECCIONA UNA CATEGORIA"
+        android:text="@string/seleccionaUnaCategoria_texto"
         android:textAlignment="center"
-        android:textSize="29sp"
-        android:background="@color/light_green_oscuro"
-        android:textColor="@color/white"/>
+        android:textSize="@dimen/listado_categorias_titulo"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listaCategoriasRecycler"
@@ -26,5 +26,8 @@
         android:id="@+id/aceptarCategoriaBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aceptar" />
+        android:text="@string/aceptarBtn_texto"
+        android:background="@drawable/boton_publicar"
+        android:textSize="@dimen/tamano_label"
+        android:layout_marginTop="22dp"/>
 </LinearLayout>

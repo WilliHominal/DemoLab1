@@ -20,5 +20,7 @@
     <string name="direccionRetiro_hint">Dirección de retiro&#8230;</string>
     <string name="terminosCondiciones_texto">Aceptar <a href="">términos y condiciones</a></string>
     <string name="publicarBtn_texto">Publicar</string>
+    <string name="aceptarBtn_texto">Aceptar</string>
     <string name="seleccionarCategoria_texto">SELECCIONAR CATEGORÍA</string>
+    <string name="seleccionaUnaCategoria_texto">SELECCIONA UNA CATEGORÍA</string>
 </resources>

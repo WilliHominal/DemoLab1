@@ -54,7 +54,10 @@ public class ListadoCategorias extends AppCompatActivity {
                 setResult(RESULT_OK, i1);
                 finish();
             } else {
-                Toast.makeText(this, "Selecciona 1 categoría", Toast.LENGTH_SHORT).show();
+                if (cantSeleccionados == 0)
+                    Toast.makeText(this, "Selecciona al menos una categoría", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(this, "Selecciona sólo una categoría", Toast.LENGTH_SHORT).show();
             }
         });
     }

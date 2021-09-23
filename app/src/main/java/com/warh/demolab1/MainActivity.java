@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -130,13 +129,13 @@ public class MainActivity extends AppCompatActivity {
                 case -30: mensaje = "Correo tiene un formato inválido"; break;
                 case -40: mensaje = "Precio tiene un formato inválido"; break;
                 case -41: mensaje = "Precio debe ser mayor a cero (0)"; break;
-                case -50:
+                case -50: mensaje = "Debes seleccionar una categoría"; break;
+                case -60:
                     mensaje = "Por favor seleccione un porcentaje de descuento mayor a cero (0) o quite la opción de ofrecer descuento de envío";
                     duracion = Toast.LENGTH_LONG;
                     break;
                 default: mensaje = "Producto publicado con éxito";
             }
-
 
             Toast.makeText(getBaseContext(), mensaje, duracion).show();
         });
@@ -204,8 +203,11 @@ public class MainActivity extends AppCompatActivity {
             if (numeroError == 0) numeroError = -41;
             precioLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
         }
-        if (descuentoSwitch.isChecked() && descuentoEnvioSeekbar.getProgress() == 0) {
+        if (categoriaSeleccionadaLabel.getText().toString().isEmpty()){
             if (numeroError == 0) numeroError = -50;
+        }
+        if (descuentoSwitch.isChecked() && descuentoEnvioSeekbar.getProgress() == 0) {
+            if (numeroError == 0) numeroError = -60;
             descuentoActualLabel.setTextColor(ContextCompat.getColor(this, R.color.red));
         }
         if (retiroEnPersonaCheckBox.isChecked() && !direccionRetiroInput.getText().toString().matches(regexCamposTexto)) {
